@@ -1,5 +1,10 @@
 package com.tigermeet.api.tigermeetapi.model;
 
+/**
+ * The class for a restaurant location on campus. Contains the restaurant name and the location of the restaurant.
+ * @author zmb6893
+ */
+
 public enum EateryLocation {
     ARTESANO_BAKERY_AND_CAFE("Artesano Bakey & Cafe", "Monroe Hall, 1 Lomb Memorial Dr, Rochester, NY 14623");
 
