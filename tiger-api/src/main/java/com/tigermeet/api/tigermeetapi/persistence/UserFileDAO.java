@@ -1,4 +1,4 @@
-package persistence;
+package com.tigermeet.api.tigermeetapi.persistence;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,8 +12,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import controller.*;
-import model.*;
+import com.tigermeet.api.tigermeetapi.model.*;
+
 
 /**
  * Implements the functionality for JSON file-based peristance for users
@@ -42,7 +42,7 @@ public class UserFileDAO implements UserDAO {
      * 
      * @throws IOException when file cannot be accessed or read from
      */
-    public UserFileDAO(@Value("${user-info.file}") String filename,ObjectMapper objectMapper) throws IOException {
+    public UserFileDAO(@Value("${userinfo.file}") String filename,ObjectMapper objectMapper) throws IOException {
         this.filename = filename;
         this.objectMapper = objectMapper;
         load();  // load the items from the file

@@ -1,4 +1,4 @@
-package model;
+package com.tigermeet.api.tigermeetapi.model;
 
 import java.util.logging.Logger;
 

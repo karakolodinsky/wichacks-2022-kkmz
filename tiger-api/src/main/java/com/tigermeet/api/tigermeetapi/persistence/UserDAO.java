@@ -1,8 +1,8 @@
-package persistence;
+package com.tigermeet.api.tigermeetapi.persistence;
+
 
 import java.io.IOException;
-import controller.*;
-import model.*;
+import com.tigermeet.api.tigermeetapi.model.*;
 
 /**
  * defines the interface for User object persistence.

@@ -1,4 +1,4 @@
-package controller;
+package com.tigermeet.api.tigermeetapi.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,8 +16,8 @@ import org.springframework.web.client.HttpClientErrorException.Conflict;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import persistence.*;
-import model.*;
+import com.tigermeet.api.tigermeetapi.persistence.*;
+import com.tigermeet.api.tigermeetapi.model.*;
 
 
 /**
