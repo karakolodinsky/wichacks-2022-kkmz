@@ -10,4 +10,17 @@ public enum EateryLocation {
         this.restaurant = restaurant;
         this.location = location;
     }
+
+    public String getLocation(){
+        return this.location;
+    }
+
+    public String getRestaurant(){
+        return this.restaurant;
+    }
+
+    @Override
+    public String toString() {
+        return restaurant + " at " + location;
+    }
 }
