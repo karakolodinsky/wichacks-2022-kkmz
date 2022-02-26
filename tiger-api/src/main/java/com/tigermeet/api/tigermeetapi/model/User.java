@@ -18,7 +18,6 @@ public class User {
 
     @JsonProperty("id") private int id;
     @JsonProperty("name") private String name;
-    @JsonProperty("gender") private Gender gender;
 
     /**
      * create a user with the given id, name, and stock.
