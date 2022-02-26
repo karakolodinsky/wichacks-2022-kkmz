@@ -6,6 +6,7 @@ package com.tigermeet.api.tigermeetapi.model;
  */
 
 public enum EateryLocation {
+    // TODO: add more EateryLocations
     ARTESANO_BAKERY_AND_CAFE("Artesano Bakey & Cafe", "Monroe Hall, 1 Lomb Memorial Dr, Rochester, NY 14623");
 
     private String restaurant;

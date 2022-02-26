@@ -6,6 +6,8 @@ package com.tigermeet.api.tigermeetapi.model;
  */
 
 public enum StudyLocation {
+    // TODO: Add more study locations
+
     FIRESIDE_LOUNGE("Fireside Lounge", "68 Lomb Memorial Dr, Rochester, NY 14623");
 
     private String location;
