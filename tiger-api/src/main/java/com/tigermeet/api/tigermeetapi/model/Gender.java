@@ -8,7 +8,8 @@ package com.tigermeet.api.tigermeetapi.model;
 public enum Gender {
     FEMALE("Female"),
     MALE("Male"),
-    NONBINARY("Nonbinary");
+    NONBINARY("Nonbinary"),
+    ANY("Any of the above");
 
     private String gender;
 
