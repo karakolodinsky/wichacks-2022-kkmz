@@ -43,7 +43,10 @@ public class User {
      * is not provided in the JSON object, the Java field gets the default Java
      * value, i.e. 0 for int
      */
-    public User(@JsonProperty("id") int id, @JsonProperty("name") String name) {
+    public User(@JsonProperty("id") int id, @JsonProperty("name") String name,  @JsonProperty("gender") Gender gender, 
+    @JsonProperty("seeking") Gender[] seeking,  @JsonProperty("birthday") Date birthday,  @JsonProperty("deaf") boolean deaf,
+    @JsonProperty("eaterylocation") EateryLocation eaterylocation,  @JsonProperty("studylocation") StudyLocation studylocation
+    ) {
         this.id = id;
         this.name = name;
         this.gender = gender;
@@ -115,6 +118,6 @@ public class User {
      */
     @Override
     public String toString() {
-        return String.format(STRING_FORMAT,id,name);
+        return String.format(STRING_FORMAT,id,name,gender,seeking,birthday,deaf,eaterylocation, studylocation);
     }
 }

@@ -177,7 +177,7 @@ public class UserFileDAO implements UserDAO {
             // we create a new item object because the id field is immutable
             // and we need to assign the next unique id
             if (nameExists(user.getName())== false){
-                User newUser = new User(nextId(),user.getName());
+                User newUser = new User(nextId(),user.getName(),user.getGender(), user.getSeeking(), user.getBirthday(), user.getDeaf(), user.getEatery(), user.getStudy() );
                 users.put(newUser.getId(),newUser);
                 save(); // may throw an IOException
                 return newUser;
