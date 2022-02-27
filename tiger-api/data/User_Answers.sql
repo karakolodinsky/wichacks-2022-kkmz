@@ -3,7 +3,7 @@
 * @author zmb6893
 */
 
-CREATE TABLE Answers (
+CREATE TABLE User_Answers (
     Answers_ID primary serial, /* Primary key */
     User_ID foreign key int, /* Foreign key */
     Q1,
