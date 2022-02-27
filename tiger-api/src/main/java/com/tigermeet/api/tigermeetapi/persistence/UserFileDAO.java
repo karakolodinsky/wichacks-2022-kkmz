@@ -31,7 +31,6 @@ public class UserFileDAO implements UserDAO {
     private ObjectMapper objectMapper;  // Provides conversion between user
                                         // objects and JSON text format written
                                         // to the file
-    private static int nextId;  // The next Id to assign to a new user
     private String filename;    // Filename to read from and write to
 
     /**
@@ -46,17 +45,6 @@ public class UserFileDAO implements UserDAO {
         this.filename = filename;
         this.objectMapper = objectMapper;
         load();  // load the items from the file
-    }
-
-    /**
-     * Generates the next id for a new {@linkplain User user}
-     * 
-     * @return The next id
-     */
-    private synchronized static int nextId() {
-        int id = nextId;
-        ++nextId;
-        return id;
     }
 
     /**
@@ -117,7 +105,6 @@ public class UserFileDAO implements UserDAO {
      */
     private boolean load() throws IOException {
         users = new TreeMap<>();
-        nextId = 0;
 
         // deserializes the JSON objects from the file into an array of items;
         // readValue will throw an IOException if there's an issue with the file
@@ -127,11 +114,7 @@ public class UserFileDAO implements UserDAO {
         // add each user to the tree map and keep track of the greatest id
         for (User user : userArray) {
             users.put(user.getId(),user);
-            if (user.getId() > nextId)
-                nextId = user.getId();
         }
-        // make the next id one greater than the maximum from the file
-        ++nextId;
         return true;
     }
 
@@ -177,7 +160,7 @@ public class UserFileDAO implements UserDAO {
             // we create a new item object because the id field is immutable
             // and we need to assign the next unique id
             if (nameExists(user.getName())== false){
-                User newUser = new User(nextId(),user.getName(),user.getGender(), user.getSeeking(), user.getBirthday(), user.getDeaf(), user.getEatery(), user.getStudy() );
+                User newUser = new User(user.getId(),user.getName(), user.getBirthday() );
                 users.put(newUser.getId(),newUser);
                 save(); // may throw an IOException
                 return newUser;

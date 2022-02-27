@@ -17,8 +17,8 @@ public class User {
     static final String STRING_FORMAT = "User [id=%d, name=%s, gender=%s, seeking=%s, birthday=%s, deaf=%b, eatery=%s ]";
 
     @JsonProperty("id") private int id;
-    @JsonProperty("name") private String name;
-    //replace with @JsonProperty("googleAuthentification") private idConfiguration googleAuthentification;
+    @JsonProperty("username") private String username;
+    //@JsonProperty("googleAuthentification") private idConfiguration googleAuthentification;
     @JsonProperty("gender") private Gender gender;
     @JsonProperty("seeking") private Gender[] seeking;
     @JsonProperty("birthday") private Date birthday;
@@ -43,18 +43,11 @@ public class User {
      * is not provided in the JSON object, the Java field gets the default Java
      * value, i.e. 0 for int
      */
-    public User(@JsonProperty("id") int id, @JsonProperty("name") String name,  @JsonProperty("gender") Gender gender, 
-    @JsonProperty("seeking") Gender[] seeking,  @JsonProperty("birthday") Date birthday,  @JsonProperty("deaf") boolean deaf,
-    @JsonProperty("eaterylocation") EateryLocation eaterylocation,  @JsonProperty("studylocation") StudyLocation studylocation
-    ) {
+    public User(@JsonProperty("id") int id, @JsonProperty("username") String username, @JsonProperty("birthday") Date birthday ) {
+
         this.id = id;
-        this.name = name;
-        this.gender = gender;
-        this.seeking = seeking;
+        this.username = username;
         this.birthday = birthday;
-        this.deaf = deaf;
-        this.eaterylocation = eaterylocation;
-        this.studylocation = studylocation;
     }
 
     /**
@@ -73,7 +66,7 @@ public class User {
      * retrieves the id of the user
      * @return The id of the user
      */
-    public String getName() {return name;}
+    public String getName() {return username;}
 
 
     /**
